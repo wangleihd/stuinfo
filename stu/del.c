@@ -48,7 +48,7 @@ int cgiMain()
 	{
 		fprintf(cgiOut,"mysql_real_query fail:%s\n", mysql_error(db));
 		mysql_close(db);
-		return ;
+		return -1;
 	}
 
 

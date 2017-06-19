@@ -66,7 +66,7 @@ int cgiMain()
 	{
 		fprintf(cgiOut,"mysql_real_query fail:%s\n", mysql_error(db));
 		mysql_close(db);
-		return ;
+		return -1;
 	}
 
 	MYSQL_RES *res;
@@ -74,7 +74,7 @@ int cgiMain()
 	if (res == NULL)
 	{
 		fprintf(cgiOut,"mysql_store_result fail:%s\n", mysql_error(db));
-		return ;
+		return -1;
 	}
 
 	fprintf(cgiOut, "<div class=\"container\"> <h1 class=\"text-center\">查询结果</h1>");
